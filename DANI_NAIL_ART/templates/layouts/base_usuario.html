@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documento</title>
+
+        <!-- External CSS and JavaScript libraries -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday@1.8.0/css/pikaday.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pikaday@1.8.0/pikaday.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pikaday@1.8.0/plugins/pikaday.jquery.min.js"></script>
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+        
+    </head>
+    <center>
+        <div style="background-color: white;">
+            <img src="{% static 'images/logoempresa.png' %}" class="logoempresa" alt="">
+        </div>
+    </center>
+    
+    <body>
+    {% load static %}
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'Menu' %}"><ion-icon name="home"></ion-icon>Inicio</a></li>
+            <li><a href="{% url 'lista_citas' %}"><ion-icon name="calendar-clear"></ion-icon>Historial de citas</a></li>
+            <li><a href="{% url 'servicio_cliente' %}"><ion-icon name="bag-add"></ion-icon>Servicios Ofrecidos</a></li>
+            <li><a href="{% url 'promociones' %}"><ion-icon name="pricetags"></ion-icon>Promociones</a></li>
+            <li><a href="{% url 'galeria' %}"><ion-icon name="images"></ion-icon>Imágenes</a></li>
+            <li><a href="{% url 'contacto' %}"><ion-icon name="call"></ion-icon>Contacto</a></li>
+            <li><a href="{% url 'Salir' %}"><ion-icon name="exit"></ion-icon>Cerrar sesion</a></li>
+            
+            <!--<li><a href="{% url 'Servicios_agendados' %}"><ion-icon name="bag-add"></ion-icon>Servicios</a></li>
+            <li><a href="{% url 'Promociones_agendadas' %}"><ion-icon name="pricetags"></ion-icon>Promociones</a></li>
+            <li><a href="{% url 'Historial_admin' %}"><ion-icon name="calendar"></ion-icon>Servicios agendados</a></li>
+            <li><a href="{% url 'Agregar_Servicio' %}"><ion-icon name="duplicate"></ion-icon>Añadir servicio</a></li>
+            <li><a href="{% url 'Agendar_Promociones' %}"><ion-icon name="duplicate"></ion-icon>Añadir promociones</a></li>
+            <li><a href="{% url 'Agregar_galeria' %}"><ion-icon name="duplicate"></ion-icon>Añadir imaguen</a></li>
+            <li><a href="{% url 'user_list' %}"><ion-icon name="person-add"></ion-icon>Userios registrados</a></li>
+            <li><a href="{% url 'base_admin' %}"><ion-icon name="exit"></ion-icon>Base del Administrador</a></li> -->
+        </ul>
+    </nav>
+    
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+    overflow: hidden;
+    position: relative;
+    width: rem;
+    background-color: #333;
+    box-shadow: rgb(38, 57, 77) 0px 10px 20px -15px;
+    height: 5rem;
+    }
+    
+    .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 24px;
+    text-decoration: none;
+    }
+    
+    .navbar a:hover {
+    background-color: #ed7ba1;
+    color: black;
+    }
+    
+    ul {
+    list-style: none;
+    }
+    
+    
+    /* Estilo para la barra de navegación y los iconos */
+    .navbar {
+        background-color: #ff4081;
+        padding: 10px; /* Espaciado interno */
+    }
+    
+    .navbar ul {
+        list-style: none; /* Elimina los estilos de lista predeterminados */
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    .navbar li {
+        margin-right: 15px; /* Espaciado entre elementos de la lista */
+    }
+    
+    
+    
+    .navbar ion-icon {
+        margin-right: 1.5px; /* Espaciado entre el icono y el texto */
+        font-size: 18px; /* Tamaño del icono */
+    }
+    body {
+        background-color: #fcd6e2; /* Un color de fondo para toda la página */
+    }  
+
+    .logoempresa {
+            width: 20rem;
+            height: 15rem;
+        }
+
+</style>
+
+
+</body>
+
+</html>
+{% block content %}
+{% endblock %}

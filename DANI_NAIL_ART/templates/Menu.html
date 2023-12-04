@@ -1,0 +1,265 @@
+{% extends 'layouts/base_usuario.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="slider-frame">
+        <ul>
+            <li><img src="{% static 'image/Manos1.jpg' %}" alt=""></li>
+            <li><img src="{% static 'image/Manos2.jpg' %}" alt=""></li>
+            <li><img src="{% static 'image/Manos3.png' %}" alt=""></li>
+            <li><img src="{% static 'image/Manos4.png' %}" alt=""></li>
+        </ul>
+    </div><br><br><br>
+
+    <center>
+
+        <section class="section">
+            <div class="apartado1">
+                <div>
+                    <center>
+                        <div><img src="{% static 'image/Logo.png' %}" alt=""></div>
+                    </center><br><hr>
+                    <h2 class="vision">Visión</h2><br>
+                    <div>
+                        <p class="parrafo1">Ser el mejor spa de todos nuestros clientes dentro de Colombia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aparatado2">
+                <div>
+                    <center>
+                        <div><img src="{% static 'image/Logo2.png' %}" alt=""></div>
+                    </center><br><hr>
+                    <h2 class="vision">Visión</h2><br>
+                    <div>
+                        <p class="parrafo1">Creamos descanso y felicidad a nuestros clientes al otorgar la mas alta calidad de servicio y técnicas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aparatado3">
+                <div>
+                <center>
+                    <div><img src="{% static 'image/Logo3.png' %}" alt=""></div>
+                </center><br><hr>
+                <h2 class="vision">Visión</h2><br>
+                <div>
+                    <p class="parrafo1">Tener una cartera de clientes con fidelidad al servicio de calidad que solo Dani Nails Spa otorga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</center><br><br><br><br><br>
+
+
+    <section class="aparatado_final">
+        <div class="horario1">
+            <div>
+                <div>
+                    <h2  class="parrafo_final">Horario de atencion</h2><br>
+                    <p>De lunes a viernes de 10:00 a.m. a 9:00 p.m.</p></div>
+                </div>
+                <div>
+                    <p>Sábados de 9:30 a.m. a 8:00 p.m. p.m.</p>
+                </div>
+            </div>
+            <div class="horario">
+                <div>
+                    <h2 class="parrafo_final">CONTACTO</h2><br>
+                </div>
+                <div>
+                    <p><ion-icon name="call-outline"></ion-icon>(55) 6552-8494</p>
+                    <p><ion-icon name="logo-whatsapp"></ion-icon>(55) 8033-8600</p>
+                    <p><ion-icon name="mail-outline"></ion-icon>naamspa@gmail.com</p>
+                </div>
+            </div>
+            <div class="horario2">
+                <div>
+                    <h2 class="parrafo_final">Formas de pago</h2><br>
+                </div>
+                <div>Aceptamos tarjetas de crédito y débito (VISA, MasterCard, AMEX), PayPal y Transferencia Electrónica.</div>
+                <img class="logo_nequi" src="{% static 'image/nequi-logo1.png' %}" alt="">
+            </div>
+        </section>
+
+        
+        
+        <style>
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 50px;
+        }
+        
+        .slider-frame {
+            width: 95rem;
+            height: auto;
+            margin:50px auto 0;
+            overflow: hidden;
+        }
+        
+        .slider-frame ul {
+            display: flex;
+            padding: 0;
+            width: 400%;
+            
+            animation: slide 20s infinite alternate ease-in-out;
+        }
+        
+        .slider-frame li {
+            width: 100%;
+            list-style: none;
+        }
+        
+        .slider-frame img {
+            width: 100%;
+        }
+        
+        @keyframes slide {
+            0% { margin-left: 0; }
+            25% { margin-left: 0; }
+            
+            30% { margin-left: -100%; }
+            55% { margin-left: -100%; }
+            
+            60% { margin-left: -200%; }
+            85% { margin-left: -200%; }
+            
+            90% { margin-left: -300%; }
+            100% { margin-left: -300%; }
+            
+        }
+        
+        .slider {
+            /* Otras propiedades del slider */
+            animation: slide 1s linear infinite; /* Ajusta la duración según tus necesidades */
+        }
+        
+        .apartado1 {
+            width: 20rem;
+            border-radius: 30px 30px 30px 30px;
+            border-style: solid;
+            border-width: 10px 0px 0px 0px;
+            border-color: #ff4081;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            margin: 0px 30px 0px 0px;
+            --e-column-margin-right: 30px;
+            --e-column-margin-left: 0px;
+            padding: 30px 0px 15px 0px;
+        }
+        
+        .aparatado2 {
+            width: 20rem;
+            border-radius: 30px 30px 30px 30px;
+            border-style: solid;
+            border-width: 10px 0px 0px 0px;
+            border-color: #ff4081;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            margin: 0px 30px 0px 0px;
+            --e-column-margin-right: 30px;
+            --e-column-margin-left: 0px;
+            padding: 30px 0px 15px 0px;
+        }
+        
+        .aparatado3 {
+            width: 20rem;
+            border-radius: 30px 30px 30px 30px;
+            border-style: solid;
+            border-width: 10px 0px 0px 0px;
+            border-color: #ff4081;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            margin: 0px 30px 0px 0px;
+            --e-column-margin-right: 30px;
+            --e-column-margin-left: 0px;
+            padding: 30px 0px 15px 0px;
+        }
+        
+        .section {
+            display: flex;
+            padding-left: 15rem;
+            width: end;
+            height: auto;
+            margin:50px auto 0;
+            overflow: hidden;
+        
+        }
+        
+        .vision{
+            margin-top: -2rem;
+            color: #54595F;
+            font-family: "vivaldi", Sans-serif;
+            font-size: 40px;
+            font-weight: 900;
+        }
+        
+        .parrafo1 {
+            border: 0;
+            font-size: 100%;
+            color: #54595F;
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+            font-family: cursive;
+            font-style: inherit;
+            font-weight: inherit;
+            margin: 0;
+            margin-bottom: 0px;
+            outline: 0;
+            padding: 0;
+        }
+        
+        .elementor-divider-separator {
+            color: #54595F;
+            font-family: "vivaldi", Sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            
+        }
+        
+        .aparatado_final {
+            width: auto;
+            height: auto;
+            padding-left: 13rem;
+            display: flex;
+            background-color: #ff4081;
+            color: white;
+        }
+        
+        .parrafo_final {
+            font-family: "Source Sans Pro", Sans-serif;
+        }
+        
+        .horario1 {
+            margin-left: 5rem;
+            width: 19rem;
+        }
+        
+        .horario {
+            margin-left: 5rem;
+            width: 10rem;
+        }
+        
+        .horario2 {
+            margin-left: 7rem;
+            width: 15.5rem;
+        }
+        
+        .logo_nequi {
+            width: 5.5rem;
+            height: 5rem;
+        }
+        
+        </style>
+</body>
+</html>
+
+{% endblock %}

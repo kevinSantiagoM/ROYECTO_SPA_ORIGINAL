@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    
+    <title>Crear cita</title>
+</head>
+<body>
+    {% extends "layouts/base_usuario.html" %}
+    {% block content %}
+    <br><br>
+    <div class="container">
+        <h2>Agendar cita</h2>
+        <form method="post" id="CitaForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="guardarCita">Guardar</button>
+        </form>
+        
+    </div>
+    <br><br><br><br><br><br>
+    <style>
+        .container {
+            width: 30rem;
+            height: 32rem;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="date"], input[type="time"], button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select{
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+    display: block;
+    width: 10rem;
+    height: 40px;
+    margin: 0 auto; /* Center the button */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f177a0;
+    font-size: 1em;
+    color: white;
+}
+
+    </style>
+    <script>
+        // Función para mostrar un alert con SweetAlert2
+        function mostrarError(mensaje) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: mensaje,
+            });
+        }
+
+        // Función para mostrar un alert de éxito con SweetAlert2
+        function mostrarExito(mensaje) {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Éxito!',
+                text: mensaje,
+            });
+        }
+
+        // Función que se ejecuta al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asociar la función al evento submit del formulario
+            document.getElementById('CitaForm').addEventListener('submit', function(event) {
+                // Obtener la fecha y hora ingresadas por el usuario
+                var fechaInput = document.getElementById('id_fecha');
+                var horaInput = document.getElementById('id_hora');
+
+                // Crear un objeto de fecha y hora
+                var fechaHora = new Date(fechaInput.value + ' ' + horaInput.value);
+
+                // Obtener la fecha y hora actuales
+                var fechaHoraActual = new Date();
+
+                // Comparar las fechas
+                if (fechaHora < fechaHoraActual) {
+                    // Mostrar el mensaje de error con SweetAlert2
+                    mostrarError('La fecha y hora no pueden ser anteriores a la fecha y hora actuales.');
+                    
+                    // Prevenir el envío del formulario
+                    event.preventDefault();
+                } else {
+                    // Mostrar el mensaje de éxito si la fecha y hora son correctas
+                    mostrarExito('La cita se ha guardado correctamente.');
+                }
+            });
+        });
+    </script>
+
+    
+
+    {% endblock %}
+</body>
+</html>

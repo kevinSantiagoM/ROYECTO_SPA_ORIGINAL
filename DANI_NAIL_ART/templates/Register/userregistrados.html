@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    {% extends "layouts/base_admin.html" %}
+    {% load static %}
+    {% block content %}
+</head>
+<body>
+    <br><br>
+    <div class="historial_usuario">
+        <div>
+            <h2>Usuarios Registrados</h2>
+            <table class="user-tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre de Usuario</th>
+                        <th>Correo Electrónico</th>
+                        <th>Número de Teléfono</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone_number }}</td>
+                            <td>{{ user.user_id }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <style>
+        .historial_usuario {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(245, 187, 187, 0.8);
+            /* Fondo no transparente con opacidad */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-tabla {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .user-tabla th, .user-tabla td {
+            padding: 10px;
+            border: 1px solid #1b1a1a;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .user-tabla th {
+            background-color: #ff4081;
+            color: white;
+        }
+    </style>
+    {% endblock %}
+</body>
+</html>

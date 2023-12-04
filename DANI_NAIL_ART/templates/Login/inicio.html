@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    {% extends "layouts/base_inicio.html" %}
+    {% load static %}
+    {% block content %}
+    <script src="{% static 'JS/inicio.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'CSS/inicio.css' %}">
+
+    <br><br><br>
+    <div class="container"> 
+        <h2>Iniciar Sesión</h2>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
